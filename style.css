@@ -94,9 +94,14 @@ img { max-width: 100%; display: block; }
 .logo {
   display: flex;
   align-items: center;
+  gap: 8px;
   flex-shrink: 0;
+  font-family: var(--font);
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--navy);
 }
-.logo-img { height: 34px; width: auto; display: block; }
+.logo-icon { height: 1.3em; width: auto; display: block; }
 .main-nav {
   display: flex;
   gap: 32px;
@@ -124,7 +129,7 @@ img { max-width: 100%; display: block; }
 /* Hero */
 .hero {
   position: relative;
-  min-height: 92vh;
+  min-height: 46vh;
   display: flex;
   align-items: center;
   color: var(--navy);
@@ -144,7 +149,7 @@ img { max-width: 100%; display: block; }
     radial-gradient(circle at 10% 95%, rgba(47,125,225,.14), transparent 45%),
     linear-gradient(100deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.8) 22%, rgba(255,255,255,.38) 45%, rgba(255,255,255,.55) 65%, rgba(234,243,255,.85) 100%);
 }
-.hero-content { position: relative; z-index: 1; padding-top: 90px; width: 100%; }
+.hero-content { position: relative; z-index: 1; padding-top: 60px; width: 100%; }
 .hero h1 {
   color: var(--navy);
   font-size: clamp(2rem, 4.2vw, 3.4rem);
@@ -231,21 +236,30 @@ section { padding: 100px 0; }
 }
 .complex-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(31,58,95,.12); }
 .complex-visual {
+  position: relative;
   aspect-ratio: 16/10;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--navy);
+  align-items: flex-end;
+  overflow: hidden;
+  color: #fff;
   font-family: var(--font);
   font-weight: 800;
   font-size: 1.2rem;
   letter-spacing: -.01em;
 }
-.complex-1 { background: linear-gradient(135deg, #eaf3ff, #dceeff); }
-.complex-2 { background: linear-gradient(135deg, #fff0e9, #ffe3d6); }
-.complex-3 { background: linear-gradient(135deg, #eafaf3, #d9f5e6); }
-.complex-4 { background: linear-gradient(135deg, #f3edff, #e6dcff); }
-.complex-5 { background: linear-gradient(135deg, #fff8e0, #ffefc0); }
+.complex-visual img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .3s ease;
+}
+.complex-card:hover .complex-visual img { transform: scale(1.05); }
+.complex-visual::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(0deg, rgba(15,25,40,.62) 0%, rgba(15,25,40,0) 55%);
+}
+.complex-visual span { position: relative; z-index: 1; padding: 14px 16px; }
 .complex-body { padding: 24px; }
 .complex-body h3 { font-size: 1.1rem; margin-bottom: .3em; }
 .complex-body p { font-size: .9rem; margin-bottom: 1.2em; }
