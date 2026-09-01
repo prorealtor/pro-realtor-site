@@ -113,6 +113,16 @@ img { max-width: 100%; display: block; }
   font-weight: 500;
 }
 .main-nav a:hover { color: var(--blue); }
+.nav-btn {
+  background: var(--blue);
+  color: #fff !important;
+  font-weight: 700 !important;
+  font-size: .85rem !important;
+  padding: 8px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.nav-btn:hover { background: #2568c9; color: #fff !important; }
 .phone-cta { color: var(--navy) !important; border-color: var(--navy) !important; white-space: nowrap; }
 .phone-cta:hover { background: var(--bg-soft); }
 .nav-toggle {
