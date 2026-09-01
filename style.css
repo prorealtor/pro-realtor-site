@@ -94,14 +94,30 @@ img { max-width: 100%; display: block; }
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   flex-shrink: 0;
   font-family: var(--font);
-  font-size: 1.3rem;
+  font-size: 1.7rem;
   font-weight: 900;
   color: var(--navy);
 }
-.logo-icon { height: 44px; width: 44px; min-height: 44px; min-width: 44px; display: block; flex-shrink: 0; }
+.logo-mark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.logo-icon { height: 40px; width: 40px; min-height: 40px; min-width: 40px; display: block; }
+.logo-caption {
+  font-family: var(--font);
+  font-size: .5rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: #5f8079;
+  white-space: nowrap;
+  margin-top: 2px;
+}
 .main-nav {
   display: flex;
   gap: 32px;
@@ -113,8 +129,21 @@ img { max-width: 100%; display: block; }
   font-weight: 500;
 }
 .main-nav a:hover { color: var(--blue); }
-.phone-cta { color: var(--navy) !important; border-color: var(--navy) !important; white-space: nowrap; }
-.phone-cta:hover { background: var(--bg-soft); }
+.phone-cta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  font-size: 1.05rem;
+  padding: 12px 22px;
+  box-shadow: 0 8px 20px rgba(47,125,225,.35);
+  animation: phonePulse 2.4s ease-in-out infinite;
+}
+.phone-cta:hover { background: #2568c9; }
+@keyframes phonePulse {
+  0%, 100% { box-shadow: 0 8px 20px rgba(47,125,225,.35); }
+  50% { box-shadow: 0 8px 26px rgba(47,125,225,.6); }
+}
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -397,6 +426,9 @@ section { padding: 100px 0; }
   .main-nav { display: none; }
   .nav-toggle { display: flex; }
   .phone-cta { display: none; }
+  .logo { font-size: clamp(1.05rem, 5vw, 1.4rem); gap: 8px; }
+  .logo-icon { height: 34px; width: 34px; min-height: 34px; min-width: 34px; }
+  .logo-caption { font-size: .42rem; }
   .hero-illustration { display: none; }
   .trust-grid { grid-template-columns: repeat(2, 1fr); }
   .about-body { grid-template-columns: 1fr; }
