@@ -194,6 +194,54 @@ section { padding: 100px 0; }
 .section-head { text-align: center; max-width: 640px; margin: 0 auto 56px; }
 .section-head h2 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
 
+.video-open-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  box-shadow: 0 8px 20px rgba(47,125,225,.35);
+  animation: phonePulse 2.4s ease-in-out infinite;
+}
+
+.video-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(15,25,40,.85);
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.video-modal.open { display: flex; }
+.video-modal-inner {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  aspect-ratio: 16/9;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,0,0,.5);
+}
+.video-modal-inner video { width: 100%; height: 100%; display: block; }
+.video-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.video-modal-close:hover { background: rgba(0,0,0,.7); }
+
 /* Trust */
 .trust { background: var(--bg-soft); }
 .trust-grid {

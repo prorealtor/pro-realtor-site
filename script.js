@@ -31,3 +31,28 @@ if (navToggle && mainNav) {
     }
   });
 }
+
+const videoOpenBtn = document.getElementById('videoOpenBtn');
+const videoModal = document.getElementById('videoModal');
+const videoCloseBtn = document.getElementById('videoCloseBtn');
+const promoVideo = document.getElementById('promoVideo');
+
+if (videoOpenBtn && videoModal && promoVideo) {
+  const openVideo = () => {
+    videoModal.classList.add('open');
+    promoVideo.play().catch(() => {});
+  };
+  const closeVideo = () => {
+    videoModal.classList.remove('open');
+    promoVideo.pause();
+  };
+
+  videoOpenBtn.addEventListener('click', openVideo);
+  videoCloseBtn.addEventListener('click', closeVideo);
+  videoModal.addEventListener('click', (e) => {
+    if (e.target === videoModal) closeVideo();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeVideo();
+  });
+}

@@ -22,7 +22,7 @@
     <nav class="main-nav" id="mainNav">
       <a href="#top">홈</a>
       <a href="#complexes">보유 단지</a>
-      <a href="#about">회사소개</a>
+      <a href="#about">부동산소개</a>
       <a href="#location">오시는 길</a>
       <a href="#contact">상담문의</a>
       <a href="https://rt.molit.go.kr/" target="_blank" rel="noopener">국토부 실거래가 보기</a>
@@ -76,8 +76,12 @@
 <section class="trust" id="about">
   <div class="container">
     <div class="section-head">
-      <p class="eyebrow">회사 소개</p>
+      <p class="eyebrow">부동산 소개</p>
       <h2>지식산업센터부터 아파트・오피스텔까지, 폭넓게 안내합니다</h2>
+      <button type="button" class="btn btn-primary video-open-btn" id="videoOpenBtn">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        프로부동산 홍보영상 보기
+      </button>
     </div>
     <div class="trust-grid">
       <div class="trust-card">
@@ -236,6 +240,15 @@
 <a href="tel:1800-6032" class="fab" aria-label="전화 걸기">
   <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
 </a>
+
+<div class="video-modal" id="videoModal">
+  <div class="video-modal-inner">
+    <button type="button" class="video-modal-close" id="videoCloseBtn" aria-label="닫기">&times;</button>
+    <video id="promoVideo" controls playsinline>
+      <source src="video/promo.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
